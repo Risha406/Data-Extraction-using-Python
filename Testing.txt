@@ -1,0 +1,28 @@
+import unittest
+import Penalty_report
+
+
+class Test(unittest.TestCase):
+    def test_filename1(self):
+        filename = "worng.doc"
+        ans = Penalty_report.penalty1('penalty_set.csv')
+        self.assertTrue(len(ans)!=0)
+
+    def test_filename2(self):
+        filename = "empty.csv"
+        ans = Penalty_report.penalty1('empty.csv')
+        self.assertTrue(len(ans)!=0)
+
+    def test_filename3(self):
+        filename = []
+        ans = Penalty_report.penalty1(filename)
+        self.assertTrue(len(ans)!=0)
+
+    def test_filename4(self):
+        filename = "penalty_set.xlsx"
+        ans = Penalty_report.penalty1('penalty1_set.xlsx')
+        self.assertTrue(len(ans)!=0)
+
+
+if __name__ == '__main__':
+    unittest.main()
